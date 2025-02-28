@@ -16,7 +16,6 @@ interface Application {
 const ApplicationList = () => {
   const [applications, setApplications] = useState<Application[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   const getAllApplications = async () => {
     try {
