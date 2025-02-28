@@ -20,7 +20,6 @@ const FinancialInfo = ({ onValidationChange }: { onValidationChange: (isValid: b
     value: string | boolean
   ) => {
     handleFieldChange(field, value);
-    setTimeout(validateFields, 0);
   };
   useEffect(() => {
     validateFields();
