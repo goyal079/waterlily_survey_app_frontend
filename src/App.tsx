@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SurveyForm from './components/SurveyForm';
 import ReviewSubmission from './components/ReviewSubmission';
+import ApplicationList from './components/ApplicationList';
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Navigate to="/survey" replace />} />
             <Route path="/survey" element={<SurveyForm />} />
             <Route path="/review" element={<ReviewSubmission />} />
+            <Route path="/applications" element={<ApplicationList />} />
           </Routes>
         </div>
         <ToastContainer

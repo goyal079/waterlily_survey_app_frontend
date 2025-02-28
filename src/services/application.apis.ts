@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { FormData } from '../context/FormContext';
+import { toast } from 'react-toastify';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -16,5 +17,10 @@ const apiClient = axios.create({
 
 export const createApplication = async (formData: FormData) => {
   const response = await apiClient.post('/application/create', formData);
+  return response.data;
+};
+
+export const fetchApplications = async () => {
+  const response = await apiClient.get('/application/all');
   return response.data;
 };
