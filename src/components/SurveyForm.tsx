@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm, formSteps } from '../context/FormContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PersonalInfo from './form-steps/PersonalInfo';
 import ContactInfo from './form-steps/ContactInfo';
@@ -63,6 +63,32 @@ const SurveyForm = () => {
 
   return (
     <div className="max-w-4xl mx-auto">
+      <div className="flex justify-between items-center mb-8">
+        <h2 className="text-2xl font-semibold text-primary-light">
+          {formSteps[currentStep - 1].title}
+        </h2>
+        <Link 
+          to="/applications" 
+          className="text-primary hover:text-primary-hover text-sm font-medium flex items-center gap-1 transition-colors"
+        >
+          View all applications
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="h-4 w-4" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </Link>
+      </div>
+
       {/* Progress Bar */}
       <div className="mb-8">
         <div className="w-full bg-gray-200 rounded-full h-2.5">
