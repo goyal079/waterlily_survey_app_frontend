@@ -1,54 +1,112 @@
-# React + TypeScript + Vite
+# Survey Application Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-step survey application built with React, TypeScript, and Tailwind CSS that collects user information through a structured form process and displays submissions in a tabular format.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Multi-Step Form
+- **Personal Information**
+  - First Name
+  - Last Name
+  - Date of Birth
 
-## Expanding the ESLint configuration
+- **Contact Information**
+  - Email
+  - Phone Number
+  - ZIP Code
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Health Information**
+  - Chronic Conditions Status
+  - Condition Details (if applicable)
+  - Smoking Status
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Financial Information**
+  - Annual Income
+  - Savings Status
+  - Insurance Status
+
+### Key Features
+- Progressive form completion with validation
+- Real-time input validation
+- Progress tracking
+- Responsive design
+- Toast notifications for feedback
+- Applications list view
+- Form data review page
+
+## Tech Stack
+
+- **React** - Frontend framework
+- **TypeScript** - Type safety and better development experience
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Navigation and routing
+- **Axios** - API requests
+- **React-Toastify** - Toast notifications
+- **Context API** - State management
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone [repository-url]
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
 ```
+
+3. Create a `.env` file in the root directory
+```env
+VITE_API_BASE_URL=http://localhost:8000/api/v1
+```
+
+4. Start the development server
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+
+## API Integration
+
+The application interacts with the following endpoints:
+
+- `POST /application/create` - Submit new survey response
+- `GET /application/all` - Fetch all submissions
+
+## Form Validation Rules
+
+- **Email**: Valid email format
+- **Phone**: 10-15 digits with optional country code
+- **ZIP Code**: 5 digits with optional 4-digit extension
+- **Date of Birth**: Must be in the past
+- **Required Fields**: All fields are mandatory unless specified
+
+## Styling
+
+- Custom primary color: #7755CC
+- Font family: Fredoka
+- Responsive design breakpoints
+- Consistent spacing and typography
+
+## Future Improvements
+
+- Form data persistence using localStorage
+- Direct URL access to specific form steps
+- Export functionality (CSV/PDF)
+- Sorting and filtering in applications list
+- Enhanced accessibility
+- Unit and integration tests
+- Data caching
+- Enhanced mobile responsiveness
+
