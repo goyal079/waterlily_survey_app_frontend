@@ -10,7 +10,7 @@ interface Application {
   phone: string;
   dateOfBirth: string;
   zipCode: string;
-  created_at: string;
+  createdAt: string;
 }
 
 const ApplicationList = () => {
@@ -102,10 +102,10 @@ const ApplicationList = () => {
                   </td>
                   <td className="px-6 py-5 whitespace-nowrap">
                     <div className="text-base text-gray-900">
-                      {new Date(app.created_at).toLocaleDateString()}
+                      {new Date(app.createdAt).toLocaleDateString()}
                     </div>
                     <div className="text-base text-gray-500 mt-1">
-                      {new Date(app.created_at).toLocaleTimeString()}
+                      {new Date(app.createdAt).toLocaleTimeString()}
                     </div>
                   </td>
                 </tr>
