@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import SurveyForm from './components/SurveyForm';
 import ReviewSubmission from './components/ReviewSubmission';
 import ApplicationList from './components/ApplicationList';
-import './App.css'
 
 function App() {
   return (
