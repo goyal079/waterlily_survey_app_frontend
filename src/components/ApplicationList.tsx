@@ -44,13 +44,7 @@ const ApplicationList = () => {
     );
   }
 
-  if (error) {
-    return (
-      <div className="text-center text-red-600 py-8">
-        {error}
-      </div>
-    );
-  }
+
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
